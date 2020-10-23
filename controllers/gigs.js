@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router();
 const jwt = require('jwt-simple')
 const bcrypt = require('bcrypt')
-const passport = require('../config/passport.js')
+// const passport = require('../config/passport.js')
 const config = require('../config/config.js')
-const Gig = require('../models/roaster.js')
+const Gig = require('../models/gig.js')
 
 router.get('/', (req, res) => {
   Gig.find({}, (error, allGigs) => {
