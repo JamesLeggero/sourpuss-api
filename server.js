@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
-// const passport = require('./config/passport')()
+const passport = require('./config/passport')()
 
 const PORT = process.env.PORT || 3001
 const MONGO_URI = process.env.MONGO_URI
@@ -22,7 +22,7 @@ db.on('open', () => {
 })
 app.use(cors())
 app.use(express.json())
-// app.use(passport.initialize())
+app.use(passport.initialize())
 
 app.use('/gigs', require('./controllers/gigs.js'))
 

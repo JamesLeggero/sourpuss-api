@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const GigSchema = new mongoose.Schema(
     {
-        group: {type: String, required: true},
+        performer: {type: String, required: true},
         location: String,
         time: String,
         link: String,
