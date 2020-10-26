@@ -17,7 +17,7 @@ mongoose.connect(MONGO_URI, {
 })
 db.on('open', () => {
     console.log('PUSS'
-    // + " " + PORT
+    // + '\n' + PORT
     )
 })
 app.use(cors())
@@ -25,6 +25,10 @@ app.use(express.json())
 app.use(passport.initialize())
 
 app.use('/gigs', require('./controllers/gigs.js'))
+app.use('/users', require('./controllers/users.js'))
+app.get('/', (req, res) => {
+    res.send('Flower Kuss')
+})
 
 app.listen(PORT, () =>{
     console.log('SOUR')
